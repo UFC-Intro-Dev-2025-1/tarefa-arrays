@@ -1,43 +1,45 @@
-// Sistema de Caixa de Mercantil
+// Tarefa: Treinando Arrays de forma global
 
-// Variáveis para armazenar os itens, o total e a quantidade de itens
-let itensRecibo = ''; // String para armazenar os itens do recibo, 1 por linha
-let valorTotal = 0.0; // Número para armazenar o valor total
-let quantidadeItens = 0; // Número para armazenar a quantidade de itens
+// Complete o código para cumprir com as demandas abaixo.
 
-// Função para adicionar um item ao recibo
-function adicionarItem(nome: string, preco: number): void {
-    itensRecibo += `- ${nome}: R$${preco.toFixed(2)}\n`; // Adiciona o item à string
-    valorTotal += preco; // Soma o preço ao valor total
-    quantidadeItens++; // Incrementa a quantidade de itens
+// 1. Criar um array de números.
+// 2. Ajustar a função mostrarArray para exibir o tamanho do array corretamente.
+// 3. Adicionar elementos 60 e 70 ao array.
+// 4. Exibir o array usando a função mostrarArray.
+// 5. Remover o último elemento do array usando o método pop.
+// 6. Exibir o array usando a função mostrarArray.
+// 7. Mostrar o elemento excluído.
+// 8. Mostrar cada elemento do array em uma linha usando o método forEach.
+// 9. Criar um novo array com os valores dobrados usando o método map.
+// 10. Calcular a soma de todos os elementos do array usando o método reduce.
+
+const numeros: number[] = [10, 20, 30, 40, 50];
+
+function mostrarArray(array: number[]): void {
+    console.log('--------------------------------');
+    console.log(`Tamanho: ${array.length}`); // completar
+    console.log(`Array: ${array}`); // completar
 }
+mostrarArray(numeros);
 
-// Função para reiniciar a compra
-function reiniciarCompra(): void {
-    itensRecibo = ''; // Reseta os itens do recibo
-    valorTotal = 0.0; // Reseta o valor total
-    quantidadeItens = 0; // Reseta a quantidade de itens
-    console.log('Compra reiniciada. Todos os itens foram removidos.');
-}
+numeros.push(60, 70);
+mostrarArray(numeros);
 
-// Função para exibir o recibo
-function exibirRecibo(): void {
-    console.log('Recibo:');
-    console.log(itensRecibo || 'Nenhum item no recibo.'); // Exibe os itens ou mensagem padrão
-    console.log(`Quantidade de itens: ${quantidadeItens}`); // Exibe a quantidade de itens
-    console.log(`Total: R$${valorTotal.toFixed(2)}`); // Exibe o valor total
-}
+const elementoExcluido = numeros.pop();
+mostrarArray(numeros);
+console.log(`Elemento excluído: ${elementoExcluido}`);
 
-// Exemplo de uso:
-// Adicionar itens ao recibo
-adicionarItem('Arroz', 20.5);
-adicionarItem('Feijão', 10.0);
-exibirRecibo();
+numeros.forEach((numero) => {
+    console.log(`${numero}`);
+});
 
-// Reiniciar a compra
-reiniciarCompra();
-adicionarItem('Macarrão', 5.75);
-exibirRecibo();
+const dobrados = numeros.map((numero) => numero * 2);
+mostrarArray(dobrados);
+
+const soma = numeros.reduce(
+    (acumulador, valorAtual) => acumulador + valorAtual
+);
+console.log(`Soma dos elementos do array: ${soma}`);
 
 // para rodar o código, use o comando:
 // npm run build
