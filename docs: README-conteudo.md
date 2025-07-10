@@ -107,7 +107,7 @@ Arrays JavaScript começam com índice zero: o primeiro elemento de um array est
 
 ```typescript
 // TypeScript
-var arr: string[] = ['este é o primeiro elemento', 'este é o segundo elemento'];
+let arr: string[] = ['este é o primeiro elemento', 'este é o segundo elemento'];
 console.log(arr[0]); // exibe 'este é o primeiro elemento'
 console.log(arr[1]); // exibe 'este é o segundo elemento'
 console.log(arr[arr.length - 1]); // exibe o último elemento
@@ -117,7 +117,7 @@ Não podemos acessar os elementos como propriedade (como acontece nos objetos):
 
 ```typescript
 // TypeScript
-var anos = [1950, 1960, 1970, 1980, 1990, 2000, 2010];
+let anos = [1950, 1960, 1970, 1980, 1990, 2000, 2010];
 console.log(anos.0); // um erro de sintaxe
 console.log(anos[0]); // funciona corretamente
 ```
@@ -128,7 +128,7 @@ Considere o array abaixo para os exemplos seguintes:
 
 ```typescript
 // TypeScript
-var frutas: string[] = ['Maçã', 'Banana'];
+let frutas: string[] = ['Maçã', 'Banana'];
 ```
 
 #### Iterar um Array - `foreach`
@@ -146,7 +146,7 @@ frutas.forEach(function (item, indice, array) {
 
 ```typescript
 // TypeScript
-var adicionar = frutas.push('Laranja');
+let adicionar = frutas.push('Laranja');
 // ['Maçã', 'Banana', 'Laranja']
 ```
 
@@ -154,7 +154,7 @@ var adicionar = frutas.push('Laranja');
 
 ```typescript
 // TypeScript
-var ultimo = frutas.pop(); // remove Laranja (do final)
+let ultimo = frutas.pop(); // remove Laranja (do final)
 // ['Maçã', 'Banana'];
 ```
 
@@ -164,7 +164,7 @@ Usado para remover do início do Array.
 
 ```typescript
 // TypeScript
-var primeiro = frutas.shift(); // remove Maçã do início
+let primeiro = frutas.shift(); // remove Maçã do início
 // ['Banana'];
 ```
 
@@ -172,7 +172,7 @@ var primeiro = frutas.shift(); // remove Maçã do início
 
 ```typescript
 // TypeScript
-var adicionar = frutas.unshift('Morango'); // adiciona ao início
+let adicionar = frutas.unshift('Morango'); // adiciona ao início
 // ['Morango', 'Banana'];
 ```
 
@@ -183,7 +183,7 @@ var adicionar = frutas.unshift('Morango'); // adiciona ao início
 frutas.push('Manga');
 // ['Morango', 'Banana', 'Manga']
 
-var pos = frutas.indexOf('Banana');
+let pos = frutas.indexOf('Banana');
 // 1
 ```
 
@@ -191,7 +191,7 @@ var pos = frutas.indexOf('Banana');
 
 ```typescript
 // TypeScript
-var removedItem = frutas.splice(pos, 1); // é assim que se remove um item
+let removedItem = frutas.splice(pos, 1); // é assim que se remove um item
 // ['Morango', 'Manga']
 ```
 
@@ -199,7 +199,7 @@ var removedItem = frutas.splice(pos, 1); // é assim que se remove um item
 
 ```typescript
 // TypeScript
-var copiar = frutas.slice(); // é assim que se copia
+let copiar = frutas.slice(); // é assim que se copia
 // ['Morango', 'Manga']
 ```
 
@@ -247,15 +247,15 @@ console.log(arr2.flat(2));
 O método `sort()` ordena os elementos do próprio array e retorna o array. A ordenação não é necessariamente estável. A ordenação padrão é de acordo com a pontuação de [código unicode](https://www.ime.usp.br/~pf/algoritmos/apend/unicode.html).
 
 ```typescript
-var fruit = ['cherries', 'apples', 'bananas'];
+let fruit = ['cherries', 'apples', 'bananas'];
 fruit.sort(); // ['apples', 'bananas', 'cherries']
 
-var scores = [1, 10, 2, 21];
+let scores = [1, 10, 2, 21];
 scores.sort(); // [1, 10, 2, 21]
 // Observe que 10 vem antes do 2,
 // porque '10' vem antes de '2' em ponto de código Unicode.
 
-var things = ['word', 'Word', '1 Word', '2 Words'];
+let things = ['word', 'Word', '1 Word', '2 Words'];
 things.sort(); // ['1 Word', '2 Words', 'Word', 'word']
 // Em Unicode, números veem antes de letras maiúsculas,
 // as quais veem antes das minúsculas.
@@ -278,14 +278,14 @@ console.log(map1);
 Outros exemplos:
 
 ```typescript
-var numbers = [1, 4, 9];
-var roots = numbers.map(Math.sqrt);
+let numbers = [1, 4, 9];
+let roots = numbers.map(Math.sqrt);
 // roots é [1, 2, 3], numbers ainda é [1, 4, 9]
 ```
 
 ```typescript
-var numbers = [1, 4, 9];
-var doubles = numbers.map(function (num) {
+let numbers = [1, 4, 9];
+let doubles = numbers.map(function (num) {
     return num * 2;
 });
 // doubles é agora [2, 8, 18]. numbers ainda é [1, 4, 9]
