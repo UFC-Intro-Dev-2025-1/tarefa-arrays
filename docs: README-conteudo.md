@@ -165,17 +165,17 @@ O método splice() altera o conteúdo de uma lista, adicionando novos elementos 
 const meses = ["Janeiro", "Março", "Abril", "Junho"];
 
 // ---- Removendo elementos 
-let removidos = meses.splice(1,2); // remove Janeiro
-console.log("Resultado: ", meses); // ["Março", "Abril", "Junho"]
-console.log("Meses removidos:", removidos); // Janeiro
+let removidos = meses.splice(1,2); // remove 2 elementos a partir do índice 1
+console.log("Resultado: ", meses); // [ "Janeiro", "Junho" ]
+console.log("Meses removidos:", removidos); // [ 'Março', 'Abril' ]
 
 // ---- Adicionando elementos
 meses.splice(1, 0, "Fevereiro"); // Adicionar Fevereiro no índice 1
-console.log(meses); // ["Fevereiro", "Março", "Abril", "Junho"]
+console.log(meses); // [ 'Janeiro', 'Fevereiro', 'Junho' ]
 
 // ---- Substituindo elementos
-meses.splice(3, 1, "Maio"); // Substitui 1 elemento no índice 4
-console.log(meses); // ["Fevereiro", "Março", "Abril", "Maio"]
+meses.splice(2, 1, "Maio"); // Substitui 1 elemento no índice 2 (Junho -> Maio)
+console.log(meses); // [ 'Janeiro', 'Fevereiro', 'Maio' ]
 ```
 #### Ordenar elementos - `sort`
 
